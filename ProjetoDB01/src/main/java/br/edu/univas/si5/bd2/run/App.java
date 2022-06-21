@@ -18,17 +18,14 @@ public class App {
 		Scanner scanner = new Scanner(System.in);
 		view.menu();
 		int choose = scanner.nextInt();
-
-		if (choose <= 4 || choose > 0) {
-			if (choose == 1) {
-				runPersist();
-			} else if (choose == 2) {
-				runUpdate();
-			} else if (choose == 3) {
-				runDelete();
-			} else if (choose == 4) {
-				runConsult();
-			}
+		if (choose == 1) {
+			runPersist();
+		} else if (choose == 2) {
+			runUpdate();
+		} else if (choose == 3) {
+			runDelete();
+		} else if (choose == 4) {
+			runConsult();
 		} else {
 			view.chooseWrong();
 		}
@@ -47,11 +44,11 @@ public class App {
 		detail.setModel("A320");
 		detail.setCapacity(200);
 		detailCRUD.persist(detail);
-		
+
 		airplane.setMaintenance(new Date());
 		airplane.setRecord_detail(detail);
 		airplaneCRUD.persist(airplane);
-		
+
 		fly.setTime(new Date());
 		fly.setPilot("Pete Maverick");
 		fly.setId_airplane(airplane);
@@ -62,35 +59,35 @@ public class App {
 		AirplaneCRUD airplaneCRUD = new AirplaneCRUD();
 		AirplaneDetailCRUD detailCRUD = new AirplaneDetailCRUD();
 		FlightsCRUD flyCRUD = new FlightsCRUD();
-		
+
 		String record_detail = "PT-ESA";
 		AirplaneDetail detail = detailCRUD.consult(record_detail);
 		detail.setCapacity(120);
 		detailCRUD.update(detail);
-		
+
 		int id_airplane = 1;
 		Airplane airplane = airplaneCRUD.consult(id_airplane);
 		airplane.setMaintenance(new Date());
 		airplaneCRUD.update(airplane);
-		
+
 		int id_fly = 1;
 		Flights fly = flyCRUD.consult(id_fly);
 		fly.setPilot("Tom Kazanksy");
 		flyCRUD.update(fly);
-		
+
 	}
 
 	public static void runDelete() {
 		AirplaneCRUD airplaneCRUD = new AirplaneCRUD();
 		AirplaneDetailCRUD detailCRUD = new AirplaneDetailCRUD();
 		FlightsCRUD flyCRUD = new FlightsCRUD();
-		
+
 		int id_fly = 1;
 		flyCRUD.delete(id_fly);
-		
+
 		int id_airplane = 1;
 		airplaneCRUD.delete(id_airplane);
-		
+
 		String record_detail = "PT-ESA";
 		detailCRUD.delete(record_detail);
 
@@ -100,13 +97,13 @@ public class App {
 		AirplaneCRUD airplaneCRUD = new AirplaneCRUD();
 		AirplaneDetailCRUD detailCRUD = new AirplaneDetailCRUD();
 		FlightsCRUD flyCRUD = new FlightsCRUD();
-		
+
 		String record_detail = "PT-ESA";
 		detailCRUD.consult(record_detail);
-		
+
 		int id_airplane = 1;
 		airplaneCRUD.consult(id_airplane);
-		
+
 		int id_fly = 1;
 		flyCRUD.consult(id_fly);
 	}

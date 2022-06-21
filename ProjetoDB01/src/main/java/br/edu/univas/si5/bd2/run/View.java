@@ -11,7 +11,7 @@ public class View {
 	}
 	
 	public void chooseWrong() {
-		System.out.println("You select wrong choose, please run again.");
+		System.out.println("You select wrong choice, please run again.");
 	}
 
 }
