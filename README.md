@@ -1,8 +1,12 @@
-# Banco-Dados-II
+# Trabalho de Banco Dados II
 
-## O que é ?
+## Tema 
 
-  Matéria de banco de dados utilizando-se do JPA para comunicar um banco PostgreSQL com *back-end* Java. Matéria lecionada por **Roberto Rocha**, utiliza-se o *Hibernate* para comunicá-los.
+  Aviação
+
+## Objetivo
+
+  Montar um projeto utilizando Java para realizar operações CRUD em banco de dado SQL, usando o JPA
   
 ## Aluno
 
