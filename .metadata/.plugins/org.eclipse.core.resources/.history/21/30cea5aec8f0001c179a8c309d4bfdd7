@@ -1,0 +1,52 @@
+package br.edu.univas.si5.bd2.dao;
+
+import javax.persistence.EntityManager;
+
+import br.edu.univas.si5.bd2.entities.Flights;
+import br.edu.univas.si5.bd2.utils.HibernateUtil;
+
+public class FlightsCRUD {
+	
+	private EntityManager em = HibernateUtil.getEntityManager();
+	
+	public void create(Flights fly) {
+		em.getTransaction().begin();
+		em.persist(fly);
+		em.getTransaction().commit();
+		System.out.println("Persistence has been finish with successful");
+	}
+	
+	public Flights consult(Integer id) {
+		Flights fly = em.find(Flights.class, id);
+		if(fly == null) {
+			System.out.println("Consult has been finish with successful");
+		} else {
+			System.out.println("Not found primary key!");
+		}
+		return fly; 
+	}
+	
+	public void update(Flights fly) {
+		if(fly != null) {
+			em.getTransaction().begin();
+			em.merge(fly);
+			em.getTransaction().commit();
+			System.out.println("Update has been finish with successful");
+		} else {
+			System.out.println("Not found the item");
+		}
+	}
+	
+	public void delete(Integer id) {
+		Flights fly = em.find(Flights.class, id);
+		if(fly != null) {
+			em.getTransaction().begin();
+			em.remove(fly);
+			em.getTransaction().commit();
+			System.out.println("Delete has been finish with successful");
+		} else {
+			System.out.println("Not found this item");
+		}
+	}
+
+}

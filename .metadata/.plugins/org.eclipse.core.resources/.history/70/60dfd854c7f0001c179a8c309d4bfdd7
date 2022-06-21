@@ -1,0 +1,54 @@
+package br.edu.univas.si5.bd2.dao;
+
+import javax.persistence.EntityManager;
+
+import br.edu.univas.si5.bd2.entities.Flights;
+import br.edu.univas.si5.bd2.messages.View;
+import br.edu.univas.si5.bd2.utils.HibernateUtil;
+
+public class FlightsCRUD {
+	
+	private EntityManager em = HibernateUtil.getEntityManager();
+	public View v;
+	
+	public void create(Flights fly) {
+		em.getTransaction().begin();
+		em.persist(fly);
+		em.getTransaction().commit();
+		v.createFinish();
+	}
+	
+	public Flights consult(Integer id) {
+		Flights fly = em.find(Flights.class, id);
+		if(fly == null) {
+			v.consultFinishFalse();
+		} else {
+			v.consultFinishTrue();
+		}
+		return fly; 
+	}
+	
+	public void update(Flights fly) {
+		if(fly != null) {
+			em.getTransaction().begin();
+			em.merge(fly);
+			em.getTransaction().commit();
+			v.updateFinishTrue();
+		} else {
+			v.updateFinishFalse();
+		}
+	}
+	
+	public void delete(Integer id) {
+		Flights fly = em.find(Flights.class, id);
+		if(fly != null) {
+			em.getTransaction().begin();
+			em.remove(fly);
+			em.getTransaction().commit();
+			v.deleteFinishTrue();
+		} else {
+			v.deleteFinishFalse();
+		}
+	}
+
+}

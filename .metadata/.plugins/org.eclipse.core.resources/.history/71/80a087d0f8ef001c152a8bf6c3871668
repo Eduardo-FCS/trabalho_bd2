@@ -1,0 +1,46 @@
+package br.edu.univas.si5.bd2.entities;
+
+import java.util.Date;
+
+public class Airplane {
+	
+	private int id;
+	private String record;
+	private Date maintenance;
+	private int capacity;
+	
+	public Airplane() {}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getRecord() {
+		return record;
+	}
+
+	public void setRecord(String record) {
+		this.record = record;
+	}
+
+	public Date getMaintenance() {
+		return maintenance;
+	}
+
+	public void setMaintenance(Date maintenance) {
+		this.maintenance = maintenance;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+}

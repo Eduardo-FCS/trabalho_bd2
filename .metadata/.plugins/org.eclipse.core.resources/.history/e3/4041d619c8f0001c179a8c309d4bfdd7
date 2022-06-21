@@ -1,0 +1,32 @@
+package br.edu.univas.si5.bd2.messages;
+
+public class View {
+	
+	public void createFinish() {
+		System.out.println("Persistence has been finish with successful");
+	}
+	
+	public void consultFinishTrue() {
+		System.out.println("Consult has been finish with successful");
+	}
+	
+	public void consultFinishFalse() {
+		System.out.println("Not found primary key!");
+	}
+	
+	public void updateFinishTrue() {
+		System.out.println("Update has been finish with successful");
+	}
+
+	public void updateFinishFalse() {
+		System.out.println("Not found the item");
+	}
+	
+	public void deleteFinishTrue() {
+		System.out.println("Delete has been finish with successful");
+	}
+	
+	public void deleteFinishFalse() {
+		System.out.println("Not found this item");
+	}
+}

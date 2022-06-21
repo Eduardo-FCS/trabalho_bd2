@@ -1,0 +1,12 @@
+package br.edu.univas.si5.bd2.entities;
+
+import java.util.Date;
+
+public class Airplane {
+	
+	private int id;
+	private String record;
+	private Date maintenance;
+	private int capacity;
+
+}

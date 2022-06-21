@@ -1,0 +1,39 @@
+package br.edu.univas.si5.bd2.entities;
+
+import java.util.Date;
+
+public class Flights {
+	
+	private int id;
+	private String record;
+	private Date time;
+	private String name;
+	
+	public Flights() {}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getRecord() {
+		return record;
+	}
+	public void setRecord(String record) {
+		this.record = record;
+	}
+	public Date getTime() {
+		return time;
+	}
+	public void setTime(Date time) {
+		this.time = time;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

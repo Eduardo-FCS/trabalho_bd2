@@ -1,0 +1,54 @@
+package br.edu.univas.si5.bd2.entities;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+public class Airplane {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "regSeqGen_1")
+	@SequenceGenerator(name = "regSeqGen_1", sequenceName = "SEQ_AIRPLANE", allocationSize = 1)
+	private int id;
+	
+	private AirplaneDetail record_fk;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date maintenance;
+	
+	private int capacity;
+	
+	public Airplane() {}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Date getMaintenance() {
+		return maintenance;
+	}
+
+	public void setMaintenance(Date maintenance) {
+		this.maintenance = maintenance;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+}
