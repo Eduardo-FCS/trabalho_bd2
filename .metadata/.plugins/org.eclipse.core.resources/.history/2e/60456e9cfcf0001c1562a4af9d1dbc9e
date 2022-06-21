@@ -42,10 +42,10 @@ public class App {
 		AirplaneDetailCRUD detailCRUD = new AirplaneDetailCRUD();
 		FlightsCRUD flyCRUD = new FlightsCRUD();
 
-		detail.setRecord("PT-ESA");
-		detail.setManufacturer("Airbus");
+		detail.setRecord("PT-KMA");
+		detail.setManufacturer("Boing");
 		detail.setModel("A320");
-		detail.setCapacity(200);
+		detail.setCapacity(550);
 		detailCRUD.persist(detail);
 		
 		airplane.setMaintenance(new Date());
@@ -53,7 +53,7 @@ public class App {
 		airplaneCRUD.persist(airplane);
 		
 		fly.setTime(new Date());
-		fly.setPilot("Pete Maverick");
+		fly.setPilot("Michel Ribeiro");
 		fly.setId_airplane(airplane);
 		flyCRUD.persist(fly);
 	}
@@ -63,19 +63,19 @@ public class App {
 		AirplaneDetailCRUD detailCRUD = new AirplaneDetailCRUD();
 		FlightsCRUD flyCRUD = new FlightsCRUD();
 		
-		String record_detail = "PT-ESA";
+		String record_detail = "PT-ZIA";
 		AirplaneDetail detail = detailCRUD.consult(record_detail);
 		detail.setCapacity(120);
 		detailCRUD.update(detail);
 		
-		int id_airplane = 1;
+		int id_airplane = 5;
 		Airplane airplane = airplaneCRUD.consult(id_airplane);
 		airplane.setMaintenance(new Date());
 		airplaneCRUD.update(airplane);
 		
-		int id_fly = 1;
+		int id_fly = 2;
 		Flights fly = flyCRUD.consult(id_fly);
-		fly.setPilot("Tom Kazanksy");
+		fly.setPilot("Roberto Rocha");
 		flyCRUD.update(fly);
 		
 	}
@@ -88,10 +88,10 @@ public class App {
 		int id_fly = 1;
 		flyCRUD.delete(id_fly);
 		
-		int id_airplane = 1;
+		int id_airplane = 4;
 		airplaneCRUD.delete(id_airplane);
 		
-		String record_detail = "PT-ESA";
+		String record_detail = "PT-ECA";
 		detailCRUD.delete(record_detail);
 
 	}
@@ -101,10 +101,10 @@ public class App {
 		AirplaneDetailCRUD detailCRUD = new AirplaneDetailCRUD();
 		FlightsCRUD flyCRUD = new FlightsCRUD();
 		
-		String record_detail = "PT-ESA";
+		String record_detail = "PT-ECA";
 		detailCRUD.consult(record_detail);
 		
-		int id_airplane = 1;
+		int id_airplane = 4;
 		airplaneCRUD.consult(id_airplane);
 		
 		int id_fly = 1;
